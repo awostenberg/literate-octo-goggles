@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { act } from "react";
 
-import { Appointment } from "../src/Appointment.js";
+import { Appointment } from "../src/Appointment";
 
 describe("Appointment", () => {
     let container;
