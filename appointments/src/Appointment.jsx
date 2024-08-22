@@ -10,7 +10,7 @@ const appointmentTimeOfDay = (startsAt) => {
 export const Appointment = ({ customer }) => (
     <div>{customer.firstName}</div>
 );  // Note: also passed without <div>{}</div>
-    // Note: do not understand how import Readt activates html syntax
+// Note: do not understand how import Readt activates html syntax
 
 
 export const AppointmentsDayView = (
@@ -24,6 +24,11 @@ export const AppointmentsDayView = (
                 </li>
             ))}
         </ol>
+        {appointments.length === 0 ? (
+            <p>There are no appointments scheduled for today.</p>
+        ) : ( 
+            <Appointment {...appointments[0]} />
+        )}
     </div>
 );
 // npm test -- --watchAll
