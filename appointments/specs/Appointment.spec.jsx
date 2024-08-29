@@ -34,14 +34,14 @@ describe("AppointmentsDayView", () => {
 
     const today = new Date();   //coupling
     const twoAppointments = [
-        { 
+        {
             startsAt: today.setHours(12, 0),
-            customer: {firstName: "Ashley"},
-         },
-        { 
+            customer: { firstName: "Ashley" },
+        },
+        {
             startsAt: today.setHours(13, 0),
-            customer: {firstName: "Jordan"},
-         },
+            customer: { firstName: "Jordan" },
+        },
     ];
 
     let container;
@@ -66,7 +66,7 @@ describe("AppointmentsDayView", () => {
     });
 
     it("renders an OL element to display apointments", () => {
-        render(<AppointmentsDayView appointments={[]}/>);
+        render(<AppointmentsDayView appointments={[]} />);
 
         const listElement = document.querySelector("ol");
 
@@ -78,7 +78,7 @@ describe("AppointmentsDayView", () => {
 
         render(
             <AppointmentsDayView
-            appointments={twoAppointments}
+                appointments={twoAppointments}
             />
         );
 
@@ -91,7 +91,7 @@ describe("AppointmentsDayView", () => {
 
         render(
             <AppointmentsDayView
-            appointments={twoAppointments}
+                appointments={twoAppointments}
             />
         );
 
@@ -115,6 +115,33 @@ describe("AppointmentsDayView", () => {
         );
         expect(document.body.textContent).toContain(
             "Ashley"
+        );
+    });
+
+    it("has a button element in each li", () => {
+        render(
+            <AppointmentsDayView
+                appointments={twoAppointments}
+            />
+        );
+
+        const buttons =
+            document.querySelectorAll("li > button");
+        expect(buttons).toHaveLength(2);
+        expect(buttons[0].type).toEqual("button");
+    });
+
+    it("renders another appointment when selected", () => {
+        render(
+            <AppointmentsDayView
+                appointments={twoAppointments}
+            />
+        );
+        const button =
+            document.querySelectorAll("button")[1];
+        act(() => button.click());
+        expect(document.body.textContent).toContain(
+            "Jordan"
         );
     });
 })
