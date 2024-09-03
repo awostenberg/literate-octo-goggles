@@ -8,7 +8,10 @@ const appointmentTimeOfDay = (startsAt) => {
 }
 
 export const Appointment = ({ customer }) => (
-    <div>{customer.firstName}</div>
+    <table>
+        <tr>{customer.firstName}</tr>
+        <tr>{customer.lastName}</tr>
+    </table>
 );  // Note: also passed without <div>{}</div>
 // Note: do not understand how import Readt activates html syntax
 

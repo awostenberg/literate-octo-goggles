@@ -36,7 +36,8 @@ describe("AppointmentsDayView", () => {
     const twoAppointments = [
         {
             startsAt: today.setHours(12, 0),
-            customer: { firstName: "Ashley" },
+            customer: { firstName: "Ashley",
+                lastName: "Anderson" },
         },
         {
             startsAt: today.setHours(13, 0),
@@ -117,6 +118,18 @@ describe("AppointmentsDayView", () => {
             "Ashley"
         );
     });
+
+    it("renders last name", () => {
+        render(
+            <AppointmentsDayView
+                appointments={twoAppointments}
+            />
+        );
+        expect(document.body.textContent).toContain(
+            "Anderson"
+        );
+
+    })
 
     it("has a button element in each li", () => {
         render(
