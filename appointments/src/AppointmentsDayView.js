@@ -7,7 +7,7 @@ const appointmentTimeOfDay = (startsAt) => {
     return `${h}:${m}`;
 }
 
-export const Appointment = ({ customer }) => (
+export const Appointment = ({ startsAt, customer }) => (
     <table>
    
         <tbody>
