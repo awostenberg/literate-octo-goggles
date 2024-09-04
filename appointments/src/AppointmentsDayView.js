@@ -8,11 +8,20 @@ const appointmentTimeOfDay = (startsAt) => {
 }
 
 export const Appointment = ({ customer }) => (
-    <table><tbody>
-        <tr><td>{customer.firstName}</td></tr>
-        <tr><td>{customer.lastName}</td></tr>
-        <tr><td>{customer.phoneNumber}</td></tr>
-    </tbody></table>
+    <table>
+   
+        <tbody>
+            <tr>
+                <th>Today's appointment at 12:00</th>
+                <td>{customer.firstName}</td>
+                <td>{customer.lastName}</td>
+                <td>{customer.phoneNumber}</td>
+                <td>{customer.stylist}</td>
+                <td>{customer.service}</td>
+                <td>{customer.notes}</td>
+            </tr>
+        </tbody>
+    </table>
 );  // Note: also passed without <div>{}</div>
 
 

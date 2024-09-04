@@ -39,6 +39,9 @@ describe("AppointmentsDayView", () => {
             customer: { firstName: "Ashley",
                 lastName: "Anderson",
                 phoneNumber: "(554) 338-1814",
+                stylist: "Maggie",
+                service: "Moustache Wax",
+                notes: "pater noster",
             },
         },
         {
@@ -123,6 +126,17 @@ describe("AppointmentsDayView", () => {
     });
 
     describe("data elements within view", () => {
+        it("renders head line with time", () => {
+            render(
+                <AppointmentsDayView
+                    appointments={twoAppointments}
+                />
+            );
+            expect(document.body.textContent).toContain(
+                "Today's appointment at 12:00"
+            );
+    
+        })
         it("renders last name", () => {
             render(
                 <AppointmentsDayView
@@ -142,6 +156,40 @@ describe("AppointmentsDayView", () => {
             );
             expect(document.body.textContent).toContain(
                 "(554) 338-1814"
+            );
+    
+        })
+
+        it("renders stylist", () => {
+            render(
+                <AppointmentsDayView
+                    appointments={twoAppointments}
+                />
+            );
+            expect(document.body.textContent).toContain(
+                "Maggie"
+            );
+    
+        })
+        it("renders service", () => {
+            render(
+                <AppointmentsDayView
+                    appointments={twoAppointments}
+                />
+            );
+            expect(document.body.textContent).toContain(
+                "Moustache Wax"
+            );
+    
+        })
+        it("renders notes", () => {
+            render(
+                <AppointmentsDayView
+                    appointments={twoAppointments}
+                />
+            );
+            expect(document.body.textContent).toContain(
+                "pater noster"
             );
     
         })
