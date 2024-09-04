@@ -5,7 +5,8 @@ export const sampleAppointments = [
     { startsAt: at(10), customer: { firstName: "Frankie" } },
     { startsAt: at(11), customer: { firstName: "Casey" } },
     { startsAt: at(12), customer: { firstName: "Ashley",
-                                    lastName: "Anderson"
+                                    lastName: "Anderson",
+                                    phoneNumber: "(543) 222-1212",
      } },
     { startsAt: at(13), customer: { firstName: "Jordan" } },
     { startsAt: at(14), customer: { firstName: "Jay" } },
