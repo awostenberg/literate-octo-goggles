@@ -37,11 +37,14 @@ describe("AppointmentsDayView", () => {
         {
             startsAt: today.setHours(12, 0),
             customer: { firstName: "Ashley",
-                lastName: "Anderson" },
+                lastName: "Anderson",
+                phoneNumber: "(554) 338-1814",
+            },
         },
         {
             startsAt: today.setHours(13, 0),
-            customer: { firstName: "Jordan" },
+            customer: { firstName: "Jordan",
+            },
         },
     ];
 
@@ -119,17 +122,31 @@ describe("AppointmentsDayView", () => {
         );
     });
 
-    it("renders last name", () => {
-        render(
-            <AppointmentsDayView
-                appointments={twoAppointments}
-            />
-        );
-        expect(document.body.textContent).toContain(
-            "Anderson"
-        );
-
+    describe("data elements within view", () => {
+        it("renders last name", () => {
+            render(
+                <AppointmentsDayView
+                    appointments={twoAppointments}
+                />
+            );
+            expect(document.body.textContent).toContain(
+                "Anderson"
+            );
+    
+        })
+        it("renders phone number", () => {
+            render(
+                <AppointmentsDayView
+                    appointments={twoAppointments}
+                />
+            );
+            expect(document.body.textContent).toContain(
+                "(554) 338-1814"
+            );
+    
+        })
     })
+
 
     it("has a button element in each li", () => {
         render(

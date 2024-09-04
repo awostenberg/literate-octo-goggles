@@ -8,12 +8,13 @@ const appointmentTimeOfDay = (startsAt) => {
 }
 
 export const Appointment = ({ customer }) => (
-    <table>
-        <tr>{customer.firstName}</tr>
-        <tr>{customer.lastName}</tr>
-    </table>
+    <table><tbody>
+        <tr><td>{customer.firstName}</td></tr>
+        <tr><td>{customer.lastName}</td></tr>
+        <tr><td>{customer.phoneNumber}</td></tr>
+    </tbody></table>
 );  // Note: also passed without <div>{}</div>
-// Note: do not understand how import Readt activates html syntax
+
 
 
 export const AppointmentsDayView = (

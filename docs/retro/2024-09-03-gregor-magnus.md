@@ -2,7 +2,7 @@
 * two participants
 * opened with Aquinas prayer
 * discussed education vs drop in median reading ability
-    * according to presidential inaugeration speeches
+    * according to presidential [inauguration speeches](https://www.profstonge.com/p/how-did-american-voters-get-so-dumb)
 * clean up commit remarks from last time
 * looked for/tried to understand
     * sample data
