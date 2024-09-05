@@ -7,12 +7,11 @@ const appointmentTimeOfDay = (startsAt) => {
     return `${h}:${m}`;
 }
 
-export const Appointment = ({ startsAt, customer }) => (
+export const Appointment = ({ customer, startsAt }) => (
     <table>
-   
         <tbody>
             <tr>
-                <th>Today's appointment at 12:00</th>
+                <th>Today's appointment at {appointmentTimeOfDay(startsAt)}</th>
                 <td>{customer.firstName}</td>
                 <td>{customer.lastName}</td>
                 <td>{customer.phoneNumber}</td>
@@ -22,9 +21,7 @@ export const Appointment = ({ startsAt, customer }) => (
             </tr>
         </tbody>
     </table>
-);  // Note: also passed without <div>{}</div>
-
-
+);
 
 export const AppointmentsDayView = (
     { appointments }
@@ -54,4 +51,5 @@ export const AppointmentsDayView = (
         </div>
     );
 };
+
 // npm test -- --watchAll
