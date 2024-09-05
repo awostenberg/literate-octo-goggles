@@ -36,18 +36,23 @@ describe("AppointmentsDayView", () => {
     const twoAppointments = [
         {
             startsAt: today.setHours(12, 0),
-            customer: { firstName: "Ashley",
+            customer: {
+                firstName: "Ashley",
                 lastName: "Anderson",
                 phoneNumber: "(554) 338-1814",
-                stylist: "Maggie",
-                service: "Moustache Wax",
-                notes: "pater noster",
+
+
             },
+            stylist: "Maggie",
+            service: "Moustache Wax",
+            notes: "pater noster",
         },
         {
             startsAt: today.setHours(13, 0),
-            customer: { firstName: "Jordan",
+            customer: {
+                firstName: "Jordan",
             },
+            stylist: "Bugs",
         },
     ];
 
@@ -135,7 +140,7 @@ describe("AppointmentsDayView", () => {
             expect(document.body.textContent).toContain(
                 "Today's appointment at 12:00"
             );
-    
+
         })
         it("renders last name", () => {
             render(
@@ -146,7 +151,7 @@ describe("AppointmentsDayView", () => {
             expect(document.body.textContent).toContain(
                 "Anderson"
             );
-    
+
         })
         it("renders phone number", () => {
             render(
@@ -157,7 +162,7 @@ describe("AppointmentsDayView", () => {
             expect(document.body.textContent).toContain(
                 "(554) 338-1814"
             );
-    
+
         })
 
         it("renders stylist", () => {
@@ -169,7 +174,7 @@ describe("AppointmentsDayView", () => {
             expect(document.body.textContent).toContain(
                 "Maggie"
             );
-    
+
         })
         it("renders service", () => {
             render(
@@ -180,7 +185,7 @@ describe("AppointmentsDayView", () => {
             expect(document.body.textContent).toContain(
                 "Moustache Wax"
             );
-    
+
         })
         it("renders notes", () => {
             render(
@@ -191,7 +196,7 @@ describe("AppointmentsDayView", () => {
             expect(document.body.textContent).toContain(
                 "pater noster"
             );
-    
+
         })
     })
 
